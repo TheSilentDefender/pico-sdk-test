@@ -1,0 +1,6 @@
+[submodule "fprime"]
+	path = fprime
+	url = https://github.com/nasa/fprime.git
+[submodule "fprime-freertos-rp2040"]
+	path = fprime-freertos-rp2040
+	url = https://github.com/NU-Horizonsat/fprime-freertos-rp2040

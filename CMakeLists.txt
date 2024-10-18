@@ -1,0 +1,21 @@
+####
+# This sets up the build system for the 'pico-sdk-test' project, including
+# components and deployments from project.cmake. In addition, it imports the core F Prime components.
+####
+
+cmake_minimum_required(VERSION 3.13)
+project(pico-sdk-test C CXX)
+
+###
+# F' Core Setup
+# This includes all of the F prime core components, and imports the make-system.
+###
+include("${CMAKE_CURRENT_LIST_DIR}/fprime/cmake/FPrime.cmake")
+# NOTE: register custom targets between these two lines
+fprime_setup_included_code()
+
+
+# This includes project-wide objects
+include("${CMAKE_CURRENT_LIST_DIR}/project.cmake")
+
+link_libraries(pico_stdlib pico_async_context_freertos FreeRTOS-Kernel-Heap4)
